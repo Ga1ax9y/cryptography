@@ -1,13 +1,15 @@
 export class ByteUtils {
   static stringToBytes(str) {
     const encoder = new TextEncoder();
-    return encoder.encode(str);
+    return Array.from(encoder.encode(str));
   }
 
   static bytesToString(bytes) {
-    const decoder = new TextDecoder();
-    return decoder.decode(bytes);
+    const uint8Array = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+    const decoder = new TextDecoder('utf-8');
+    return decoder.decode(uint8Array);
   }
+
 
   static hexToBytes(hex) {
     const bytes = new Uint8Array(hex.length / 2);
