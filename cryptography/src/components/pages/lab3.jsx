@@ -30,7 +30,7 @@ import {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2196f3',
+      main: '#2183f3ff',
     },
     secondary: {
       main: '#f50057',

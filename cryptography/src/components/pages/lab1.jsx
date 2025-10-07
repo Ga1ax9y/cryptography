@@ -97,7 +97,7 @@ function Lab1() {
         <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
           {steps.map((label) => (
             <Step key={label}>
-              <StepLabel>{label}</StepLabel>
+              <StepLabel >{label}</StepLabel>
             </Step>
           ))}
         </Stepper>

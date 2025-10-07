@@ -52,6 +52,7 @@ const Navigation = () => {
     { icon: <VpnLock />, label: "Эллиптические кривые", value: "/lab7" },
     { icon: <Image />, label: "Стенографические методы", value: "/lab8" }
   ];
+    const gradient = 'grey';
 
   return (
     <>
@@ -59,6 +60,7 @@ const Navigation = () => {
         position="fixed"
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
+          background: gradient
         }}
       >
         <Toolbar>
@@ -91,7 +93,7 @@ const Navigation = () => {
         <Box
           sx={{
             padding: 2,
-            backgroundColor: 'primary.main',
+            background: gradient,
             color: 'white',
             display: 'flex',
             justifyContent: 'space-between',
@@ -120,12 +122,15 @@ const Navigation = () => {
               justifyContent: 'flex-start',
               alignItems: 'center',
               padding: '12px 16px',
-              fontSize: '0.875rem'
+              fontSize: '0.875rem',
             },
             '& .Mui-selected': {
-              backgroundColor: 'primary.light',
+              background: gradient,
               color: 'primary.contrastText',
               fontWeight: 'bold'
+            },
+            '& .MuiTabs-indicator': {
+              display: 'none'
             }
           }}
         >
@@ -139,7 +144,7 @@ const Navigation = () => {
               onClick={() => handleMenuClick(item.value)}
               sx={{
                 '&.Mui-selected': {
-                  backgroundColor: 'primary.main',
+                  background: gradient,
                   color: 'white'
                 }
               }}
